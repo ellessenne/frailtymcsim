@@ -1,0 +1,11 @@
+results-01.RDS filter=lfs diff=lfs merge=lfs -text
+results-02.RDS filter=lfs diff=lfs merge=lfs -text
+results-03.RDS filter=lfs diff=lfs merge=lfs -text
+results-04.RDS filter=lfs diff=lfs merge=lfs -text
+results-05.RDS filter=lfs diff=lfs merge=lfs -text
+results-06.RDS filter=lfs diff=lfs merge=lfs -text
+results-07.RDS filter=lfs diff=lfs merge=lfs -text
+results-08.RDS filter=lfs diff=lfs merge=lfs -text
+results-09.RDS filter=lfs diff=lfs merge=lfs -text
+results-10.RDS filter=lfs diff=lfs merge=lfs -text
+summary.RDS    filter=lfs diff=lfs merge=lfs -text
