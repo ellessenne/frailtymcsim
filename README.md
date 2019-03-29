@@ -110,8 +110,7 @@ if (all.equal(current = done.c, target = done)) {
 
 To recombine the chunks uploaded on GitHub, first download all the files
 in a single directory. Then, run the following `R` code making sure that
-the working directory is the directory where the files are
-saved:
+the working directory is the directory where the files are saved:
 
 ``` r
 done.r <- lapply(1:10, function(n) readRDS(file = paste0("results-", sprintf("%02d", n), ".RDS")))
