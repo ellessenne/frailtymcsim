@@ -2,7 +2,7 @@
 # 1:5 = c("exponential", "weibull", "gompertz", "weibull-weibull (1)", "weibull-weibull (2)")
 
 ### Frailty distributions:
-# 1:2 = c("Gamma", "Normal")
+# 1:3 = c("Gamma", "Normal", "Mixture Normal")
 
 ### Simulate data
 make_data <- function(n_individuals, n_clusters, fv, fv_dist = 1:2, treatment_effect, distribution = 1:5, pars, maxt = 5, scenario) {
@@ -19,8 +19,10 @@ make_data <- function(n_individuals, n_clusters, fv, fv_dist = 1:2, treatment_ef
   # Make frailty
   if (fv_dist == 1) {
     X[["frvec"]] <- rep(log(stats::rgamma(n_clusters, shape = 1 / fv, scale = fv)), each = n_individuals)
-  } else {
+  } else if (fv_dist == 2) {
     X[["frvec"]] <- rep(stats::rnorm(n_clusters, mean = 0, sd = sqrt(fv)), each = n_individuals)
+  } else if (fv_dist == 3) {
+    X[["frvec"]] <- rep(LaplacesDemon::rnormm(n = n_clusters, p = c(0.5, 0.5), mu = c(-3 * sqrt(fv), +3 * sqrt(fv)), sigma = c(sqrt(fv), sqrt(fv))), each = n_individuals)
   }
 
   # Make survival indicator and status variable
@@ -56,22 +58,23 @@ make_data <- function(n_individuals, n_clusters, fv, fv_dist = 1:2, treatment_ef
 library("dplyr")
 library("tidyr")
 library("simsurv")
+library("LaplacesDemon")
 
 ### Define DGMs
 # Simulation factors (not fully factorial)
 dgms <- crossing(
-  data.frame(
-    n_individuals = c(2, 10, 50, 250),
-    n_clusters = c(750, 100, 50, 15)
+  tibble(
+    n_individuals = c(2, 150),
+    n_clusters = c(750, 20)
   ),
   treatment_effect = -0.50,
   fv = c(0.25, 0.75, 1.25),
-  fv_dist = 1:2,
+  fv_dist = 1:3,
   baseline = 1:5
 ) %>%
   full_join(
     # Parameters for the different baseline hazard functions
-    data_frame(
+    tibble(
       baseline = 1:5,
       pars = list(
         list(lambda = 0.5),

@@ -761,14 +761,18 @@ make_models <- function(data, i, ptime, model) {
       null_obj = null_obj
     )
   } else if (model == 19) {
-    ffrailtypack(
-      data = data,
-      hazard = "Splines",
-      kappa = 10,
-      RandDist = "Gamma",
-      ptime = ptime,
-      null_obj = null_obj
-    )
+    if (i == 667 & unique(data[["scenario"]]) == 47) {
+      null_obj
+    } else {
+      ffrailtypack(
+        data = data,
+        hazard = "Splines",
+        kappa = 10,
+        RandDist = "Gamma",
+        ptime = ptime,
+        null_obj = null_obj
+      )
+    }
   } else if (model == 20) {
     ffrailtypack(
       data = data,
@@ -779,14 +783,18 @@ make_models <- function(data, i, ptime, model) {
       null_obj = null_obj
     )
   } else if (model == 21) {
-    ffrailtypack(
-      data = data,
-      hazard = "Splines",
-      kappa = 10000,
-      RandDist = "Gamma",
-      ptime = ptime,
-      null_obj = null_obj
-    )
+    if (i == 667 & unique(data[["scenario"]]) == 47) {
+      null_obj
+    } else {
+      ffrailtypack(
+        data = data,
+        hazard = "Splines",
+        kappa = 10000,
+        RandDist = "Gamma",
+        ptime = ptime,
+        null_obj = null_obj
+      )
+    }
   } else if (model == 22) {
     ffrailtypack(
       data = data,
