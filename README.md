@@ -10,7 +10,10 @@ Gasparini et al. In addition to that, this repository contains the
 Supporting Web Material and a dataset with the full results of the
 simulation study.
 
-A preprint of the manuscript is available on
+The final, published manuscript is available from the Statistics in
+Medicine website: <https://doi.org/10.1002/sim.8309>
+
+A pre-prints history is available on
 [arXiv](https://arxiv.org/abs/1810.08140); please get in touch via
 [Twitter](https://twitter.com/ellessenne) or
 [e-mail](mailto:ag475@leicester.ac.uk?subject=Preprint:%20Impact%20of%20Model%20Misspecification%20in%20Shared%20Frailty%20Survival%20Models)
@@ -31,6 +34,14 @@ The following files are included in this repository:
     statistics for each model and data-generating mechanism.
     `summary.RDS` was produced by `make_summaries.R`;
   - `suppl.pdf`, a PDF document with the Supporting Web Material.
+
+### Abstract
+
+<p align="center">
+
+<img src = "./abstract.png">
+
+</p>
 
 ### Splitting/Combining Results
 

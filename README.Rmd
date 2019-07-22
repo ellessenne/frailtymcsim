@@ -1,6 +1,6 @@
 ---
 output: github_document
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
@@ -19,7 +19,9 @@ options(width = 100)
 
 This repository contains the code required to simulate data, fit each model, and produce summary tables and figures for the manuscript titled _Impact of model misspecification in shared frailty survival models_ by Gasparini et al. In addition to that, this repository contains the Supporting Web Material and a dataset with the full results of the simulation study.
 
-A preprint of the manuscript is available on [arXiv](https://arxiv.org/abs/1810.08140); please get in touch via [Twitter](https://twitter.com/ellessenne) or [e-mail](mailto:ag475@leicester.ac.uk?subject=Preprint: Impact of Model Misspecification in Shared Frailty Survival Models) if you have any comment.
+The final, published manuscript is available from the Statistics in Medicine website: https://doi.org/10.1002/sim.8309
+
+A pre-prints history is available on [arXiv](https://arxiv.org/abs/1810.08140); please get in touch via [Twitter](https://twitter.com/ellessenne) or [e-mail](mailto:ag475@leicester.ac.uk?subject=Preprint: Impact of Model Misspecification in Shared Frailty Survival Models) if you have any comment.
 
 The following files are included in this repository:
 
@@ -29,6 +31,12 @@ The following files are included in this repository:
 * `results-nn.RDS`, `nn` serialised R objects containing the raw results of the simulation study. See the next chapter for information on how to combine them;
 * `summary.RDS`, a serialised R object containing the summary statistics for each model and data-generating mechanism. `summary.RDS` was produced by `make_summaries.R`;
 * `suppl.pdf`, a PDF document with the Supporting Web Material.
+
+### Abstract
+
+<p align = "center">
+  <img src = "./abstract.png">
+</p>
 
 ### Splitting/Combining Results
 
